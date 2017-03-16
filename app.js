@@ -32,9 +32,10 @@
 
       var sheet = context.workbook.worksheets.getActiveWorksheet();
       var bl = (x.length+4);
+      var name = "EIFTable"
       var values = [
         ["Query", eifurl],
-        ["",x.length],
+        [name,x.length],
         ["Time", "Value"],
       ];
 
@@ -42,19 +43,13 @@
       range.values = values;
 
     	var t = context.workbook.tables.add('A4:B4', false);
-      t.name = "MyTable"
+      var name = "EIFTable" + $("#rSubSensor").val()
+      t.name = name
 //      context.workbook.tables.getItem('MyTable').rows.add(null, x );      
       for (var i = 0; i < x.length; i++) {
-        context.workbook.tables.getItem('MyTable').rows.add(null, [[x[i][0],x[i][1]]]);      
+        context.workbook.tables.getItem(name).rows.add(null, [[x[i][0],x[i][1]]]);      
       }
       
-
-      // var range = sheet.getRange("A4:B" + bl);
-      // // Assign array value to the proxy object's values property.
-      // range.values = x;
-
-
-      // Create a proxy object for the range
       return context.sync();
     });
 
