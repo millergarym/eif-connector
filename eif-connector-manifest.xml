@@ -20,10 +20,10 @@
   <Description DefaultValue="[Workbook Add-in description]"/>
 
   <!-- Icon for your add-in. Used on installation screens and the add-ins dialog. -->
-  <IconUrl DefaultValue="https://jenkins.wx.io/eif/assets/icon-32.png" />
+  <IconUrl DefaultValue="https://jenkins.wx.io/eif/assets/hsc-32.png" />
   <!--<IconUrl DefaultValue="https://localhost:3000/assets/icon-32.png" />-->
 
-  <HighResolutionIconUrl DefaultValue="https://jenkins.wx.io/eif/assets/hi-res-icon.png"/>
+  <HighResolutionIconUrl DefaultValue="https://jenkins.wx.io/eif/assets/shirt0-300.png"/>
   <!--<HighResolutionIconUrl DefaultValue="https://localhost:3000/assets/hi-res-icon.png"/>-->
 
   <!--If you plan to submit this add-in to the Office Store, uncomment the SupportUrl element below-->
@@ -124,9 +124,9 @@
     <!-- You can use resources across hosts and form factors. -->
     <Resources>
       <bt:Images>
-        <bt:Image id="Contoso.tpicon_16x16" DefaultValue="https://jenkins.wx.io/eif/assets/icon-16.png" />
-        <bt:Image id="Contoso.tpicon_32x32" DefaultValue="https://jenkins.wx.io/eif/assets/icon-32.png" />
-        <bt:Image id="Contoso.tpicon_80x80" DefaultValue="https://jenkins.wx.io/eif/assets/icon-80.png" />
+        <bt:Image id="Contoso.tpicon_16x16" DefaultValue="https://jenkins.wx.io/eif/assets/hsc-16.png" />
+        <bt:Image id="Contoso.tpicon_32x32" DefaultValue="https://jenkins.wx.io/eif/assets/hsc-32.png" />
+        <bt:Image id="Contoso.tpicon_80x80" DefaultValue="https://jenkins.wx.io/eif/assets/hsc-80.png" />
 
         <!--<bt:Image id="Contoso.tpicon_16x16" DefaultValue="https://localhost:3000/assets/icon-16.png" />-->
         <!--<bt:Image id="Contoso.tpicon_32x32" DefaultValue="https://localhost:3000/assets/icon-32.png" />-->
