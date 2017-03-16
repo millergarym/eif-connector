@@ -19,39 +19,35 @@
 
     return Excel.run(function (context) {
       var eifurl = "https://eif-research.feit.uts.edu.au/api/json/?" +
-        "rFromDate=2017-03-14T12%3A57%3A18" +
-        "&rToDate=2017-03-16T12%3A57%3A18" +
-        "&rFamily=wasp" +
-        "&rSensor=ES_B_08_423_7BE2" +
-        "&rSubSensor=BAT";
+        "rFromDate=2017-03-14T12%3A57%3A18&rToDate=2017-03-16T12%3A57%3A18&rFamily=wasp&rSensor=ES_B_08_423_7BE2&rSubSensor=BAT"
       var x = "12"
       jQuery.ajax({ url: eifurl, async: false }).done(function (data) {
-        // x = data
         x = jQuery.parseJSON(data)
       });
 
+
       var sheet = context.workbook.worksheets.getActiveWorksheet();
-      // Values to be updated
+      var bl = (x.length+4);
       var values = [
         ["Query", eifurl],
-        ["", ""],
-        ["Time", "Value"],
+        ["",x.length],
+        ["Time", "Estimate"],
       ];
 
       var range = sheet.getRange("A1:B3");
       range.values = values;
 
-      var ar = new Array()
-      for (var i = 0; i < 10; i++) {
-        var a = new Array()
-        a[0] = x[i][0]
-        a[1] = x[i][1]
-        ar[i] = a
+    	var t = context.workbook.tables.add('A4:B4', false);
+      t.name = "MyTable"
+      for (var i = 0; i < x.length; i++) {
+        context.workbook.tables.getItem('MyTable').rows.add(null, [[x[i][0],x[i][1]]]);      
       }
+      
 
-      var range2 = sheet.getRange("A4:B" + 14);
-      // Assign array value to the proxy object's values property.
-      range2.values = ar;
+      // var range = sheet.getRange("A4:B" + bl);
+      // // Assign array value to the proxy object's values property.
+      // range.values = x;
+
 
       // Create a proxy object for the range
       return context.sync();
