@@ -19,7 +19,11 @@
 
     return Excel.run(function (context) {
       var eifurl = "https://eif-research.feit.uts.edu.au/api/json/?" +
-        "rFromDate=2017-03-14T12%3A57%3A18&rToDate=2017-03-16T12%3A57%3A18&rFamily=wasp&rSensor=ES_B_08_423_7BE2&rSubSensor=BAT"
+        "rFromDate=" + encodeURI( $("#rFromDate").val() ) +
+        "&rToDate=" + encodeURI( $("#rToDate").val() ) +
+        "&rFamily=wasp" + 
+        "&rSensor=" + $("#rSensor").val() + 
+        "&rSubSensor=" + $("#rSubSensor").val()
       var x = "12"
       jQuery.ajax({ url: eifurl, async: false }).done(function (data) {
         x = jQuery.parseJSON(data)
@@ -31,7 +35,7 @@
       var values = [
         ["Query", eifurl],
         ["",x.length],
-        ["Time", "Estimate"],
+        ["Time", "Value"],
       ];
 
       var range = sheet.getRange("A1:B3");
@@ -39,6 +43,7 @@
 
     	var t = context.workbook.tables.add('A4:B4', false);
       t.name = "MyTable"
+//      context.workbook.tables.getItem('MyTable').rows.add(null, x );      
       for (var i = 0; i < x.length; i++) {
         context.workbook.tables.getItem('MyTable').rows.add(null, [[x[i][0],x[i][1]]]);      
       }
