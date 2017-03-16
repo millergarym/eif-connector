@@ -1,0 +1,109 @@
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT license. -->
+<!-- See LICENSE in the project root for license information -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>EIF Connector</title>
+
+    <!-- Office JavaScript API -->
+    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.debug.js"></script>
+
+    <!-- LOCAL -->
+    <link rel="stylesheet" href="node_modules/office-ui-fabric-js/dist/css/fabric.min.css" />
+    <link rel="stylesheet" href="node_modules/office-ui-fabric-js/dist/css/fabric.components.css" />
+
+    <!-- CDN -->
+    <!-- For the Office UI Fabric, go to http://aka.ms/office-ui-fabric to learn more. -->
+    <!--<link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.2.0/css/fabric.min.css" />-->
+    <!--<link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.2.0/css/fabric.components.min.css" />-->
+
+    <!-- Template styles -->
+    <link href="app.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="ms-font-m ms-welcome">
+    <header class="ms-welcome__header ms-bgColor-neutralLighter ms-u-fadeIn500">
+        <img width="90" height="90" src="assets/logo-filled.png" alt="EIF Connector" title="EIF Connector" />
+        <h1 class="ms-fontSize-su ms-fontWeight-light ms-fontColor-neutralPrimary">Welcome</h1>
+    </header>
+    <main class="ms-welcome__main">
+        <div>
+            WASP Mote
+            <select id="rSensor" class="form-control">
+<option></option>
+<option value="ES_B_08_423_7BE2" selected="">ES_B_08_423_7BE2</option>
+<option value="ES_B_02_412_3E68">ES_B_02_412_3E68</option>
+<option value="ES_B_12_430_44DE">ES_B_12_430_44DE</option>
+<option value="ES_B_06_418_7BED">ES_B_06_418_7BED</option>
+<option value="ES_C_13_302_C88E">ES_C_13_302_C88E</option>
+<option value="ES_B_06_419_7C09">ES_B_06_419_7C09</option>
+<option value="ES_B_08_422_7BDC">ES_B_08_422_7BDC</option>
+<option value="ES_A_03_153_CE2A">ES_A_03_153_CE2A</option>
+<option value="ES_B_11_428_3EA4">ES_B_11_428_3EA4</option>
+<option value="ES_B_04_415_7BD1">ES_B_04_415_7BD1</option>
+<option value="ES_B_07_420_7E1D">ES_B_07_420_7E1D</option>
+<option value="ES_B_09_425_3E8D">ES_B_09_425_3E8D</option>
+<option value="ES_B_10_426_7E1E">ES_B_10_426_7E1E</option>
+<option value="ES_B_05_416_7C15">ES_B_05_416_7C15</option>
+<option value="ES_B_01_411_7E39">ES_B_01_411_7E39</option>
+<option value="ES_B_11_429_3E90">ES_B_11_429_3E90</option>
+<option value="ES_B_09_424_B74C">ES_B_09_424_B74C</option>
+<option value="ES_B_05_417_7C13">ES_B_05_417_7C13</option>
+<option value="ES_B_12_431_7BC2">ES_B_12_431_7BC2</option>
+<option value="ES_B_04_414_7C00">ES_B_04_414_7C00</option>
+<option value="ES_A_06_292_7BBF">ES_A_06_292_7BBF</option>
+<option value="ES_B_07_421_7C17">ES_B_07_421_7C17</option>
+<option value="ES_A_04_163_7C58">ES_A_04_163_7C58</option>
+<option value="ES_B_10_427_7B90">ES_B_10_427_7B90</option>
+<option value="ES_A_06_195_3E87">ES_A_06_195_3E87</option>
+<option value="ES_A_13_276_7C44">ES_A_13_276_7C44</option>
+<option value="ES_A_09_298_7BC5">ES_A_09_298_7BC5</option>
+<option value="ES_A_09_226_44DF">ES_A_09_226_44DF</option>
+<option value="ES_A_07_207_44FA">ES_A_07_207_44FA</option>
+<option value="ES_A_06_291_CE30">ES_A_06_291_CE30</option>
+<option value="ES_A_05_181_7BDA">ES_A_05_181_7BDA</option>
+<option value="ES_A_11_245_CE2B">ES_A_11_245_CE2B</option>
+<option value="ES_A_05_175_CE2E">ES_A_05_175_CE2E</option>
+<option value="ES_A_03_141_CE3A">ES_A_03_141_CE3A</option>
+<option value="ES_A_03_151_CE38">ES_A_03_151_CE38</option>
+<option value="ES_A_07_293_3E72">ES_A_07_293_3E72</option>
+<option value="ES_A_04_159_7B7E">ES_A_04_159_7B7E</option>
+<option value="ES_A_12_301_7BB6">ES_A_12_301_7BB6</option>
+<option value="ES_A_10_234_3E9E">ES_A_10_234_3E9E</option>
+<option value="ES_A_11_300_7BCD">ES_A_11_300_7BCD</option>
+<option value="ES_A_07_294_7BBC">ES_A_07_294_7BBC</option>
+</select>
+            <select id="rSubSensor" class="form-control">
+<option></option>
+<option value="BAT" selected="">Battery</option>
+<option value="LUM">Luminosity</option>
+<option value="TCA">Temperature Celsius</option>
+<option value="HUMA">Humidity</option>
+<option value="O2">Oxygen</option>
+<option value="AP2">Air Pollutants 2</option>
+<option value="VOC">Hydrocarbons</option>
+<option value="CO2">Carbon Dioxide</option>
+</select>
+<br/> 
+From <input id="rFromDate" type="text" value="2017-03-14T12:57:18"></input>
+To   <input id="rToDate" type="text" value="2017-03-16T12:57:18"></input>
+</div>
+<button id="run" class="ms-welcome__action ms-Button ms-Button--hero ms-u-slideUpIn20">
+            <span class="ms-Button-label">Run</span>
+            <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--ChevronRight"></i></span>
+        </button>
+</main>
+
+<script type="text/javascript" src="node_modules/core-js/client/core.js"></script>
+<script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
+<script type="text/javascript" src="node_modules/office-ui-fabric-js/dist/js/fabric.js"></script>
+
+<script type="text/javascript" src="app.js"></script>
+</body>
+
+</html>
