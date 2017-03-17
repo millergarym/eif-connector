@@ -1,7 +1,5 @@
 # EIF Connector
 
-This repository was created as part of the UTS / Ericson 2017 hachathon, as a demo presentation.
-
 ![Value Proposition Canvas](https://github.com/millergarym/eif-connector/raw/master/talks/sample-business-model-canvas.jpg)
 
 ## Narrative
